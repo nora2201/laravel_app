@@ -22,6 +22,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+  
 
     /**
      * Where to redirect users after registration.
@@ -68,5 +69,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    protected function redirectTo()
+    {
+      return '/todo';
     }
 }
